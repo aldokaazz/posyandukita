@@ -1,315 +1,426 @@
-<?php
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP
- *
- * This content is released under the MIT License (MIT)
- *
- * Copyright (c) 2014 - 2019, British Columbia Institute of Technology
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (https://bcit.ca/)
- * @license	https://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- * @since	Version 1.0.0
- * @filesource
- */
+<!DOCTYPE html>
+<html lang="en">
 
-/*
- *---------------------------------------------------------------
- * APPLICATION ENVIRONMENT
- *---------------------------------------------------------------
- *
- * You can load different configurations depending on your
- * current environment. Setting the environment also influences
- * things like logging and error reporting.
- *
- * This can be set to anything, but default usage is:
- *
- *     development
- *     testing
- *     production
- *
- * NOTE: If you change these, also change the error_reporting() code below
- */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-/*
- *---------------------------------------------------------------
- * ERROR REPORTING
- *---------------------------------------------------------------
- *
- * Different environments will require different levels of error reporting.
- * By default development will show errors but testing and live will hide them.
- */
-switch (ENVIRONMENT)
-{
-	case 'development':
-		error_reporting(-1);
-		ini_set('display_errors', 1);
-	break;
+	<!-- SEO Meta Tags -->
+	<meta name="description" content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
+	<meta name="author" content="Inovatik">
 
-	case 'testing':
-	case 'production':
-		ini_set('display_errors', 0);
-		if (version_compare(PHP_VERSION, '5.3', '>='))
-		{
-			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
+	<!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+	<!-- Website Title -->
+	<title>Posyandu Kita</title>
+
+	<!-- Styles -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>assets/backend/backend/css/sb-admin-2.min.css" rel="stylesheet">
+	<link href="<?php echo base_url() . 'assets/Frontend/css/bootstrap.css' ?>" rel="stylesheet">
+	<link href="<?php echo base_url() . 'assets/Frontend/css/fontawesome-all.css' ?>" rel="stylesheet">
+	<link href="<?php echo base_url() . 'assets/Frontend/css/swiper.css' ?>" rel="stylesheet">
+	<link href="<?php echo base_url() . 'assets/Frontend/css/magnific-popup.css' ?>" rel="stylesheet">
+	<link href="<?php echo base_url() . 'assets/Frontend/css/styles.css' ?>" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+
+	<!-- Favicon  -->
+	<link rel="icon" href="<?php echo base_url() . 'assets/Backend/img/logo_posyandu.png' ?>">
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+	<!-- Preloader -->
+	<div class="spinner-wrapper">
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+	</div>
+	<!-- end of preloader -->
+
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+		<div class="container">
+
+			<!-- Image Logo -->
+			<img src="<?php echo base_url() . 'assets/Frontend/images/logoposyandu.png' ?>" width="100px" alt="">
+			<!-- Text Logo - Use this if you don't have a graphic logo -->
+			<a class="navbar-brand logo-text page-scroll" href="">Posyandu Kita</a>
+
+			<!-- Mobile Menu Toggle Button -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-awesome fas fa-bars"></span>
+				<span class="navbar-toggler-awesome fas fa-times"></span>
+			</button>
+			<!-- end of mobile menu toggle button -->
+
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/cek_hasil_gizi/' . $this->session->userdata('ses_id_ortu') . '' ?>">PERTUMBUHAN</a>
+					</li>
+					<!--<li class="nav-item">
+                        <a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/perkembangan' ?>">PERKEMBANGAN(1)</a>
+                    </li>-->
+					<!--<li class="nav-item">
+                        <a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/periksa_perkembangan' ?>">PERKEMBANGAN(2)</a>
+                    </li>-->
+					<li class="nav-item">
+						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/cek_kemampuan_motorik' ?>">PERKEMBANGAN</a>
+					</li>
+					<!--<li class="nav-item">
+                        <a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/hasil_motorik' ?>">Hasil Motorik</a>
+                    </li>-->
+
+					<!-- Dropdown Menu -->
+					<li class="nav-item dropdown">
+						<a <?php foreach ($tbl_ortu as $ortu) { ?> class="nav-link dropdown-toggle page-scroll" href="<?php echo base_url() . 'index.php/Frontend/profil_view/' . $this->session->userdata('ses_id_ortu') . '' ?>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" <?php } ?>>WELCOME <?php echo $this->session->userdata('ses_name') ?></a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="<?php echo base_url() . 'index.php/Frontend/biodata' ?>"><span class="item-text">TAMBAH DATA ANAK</span></a>
+							<?php foreach ($tbl_balita as $balita) { ?>
+								<div class="dropdown-items-divide-hr"></div>
+								<a class="dropdown-item" href="<?php echo base_url() . 'index.php/Frontend/biodata_view/' . $balita->id_balita . '' ?>"><span class="item-text">
+										<?php echo $balita->nm_balita ?><br>
+									</span></a>
+							<?php } ?>
+						</div>
+					</li>
+					<!-- end of dropdown menu -->
+
+				</ul>
+				<span class="nav-item">
+					<a class="btn-outline-sm" href="<?php echo base_url() . 'index.php/Login/logout' ?>">LOG OUT</a>
+				</span>
+			</div>
+		</div> <!-- end of container -->
+	</nav> <!-- end of navbar -->
+	<!-- end of navigation -->
+
+
+	<!-- Header -->
+	<header id="header" class="header">
+		<div class="header-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-xl-5">
+						<div class="text-container">
+							<h1>Ayo Cek Balita Anda Ke Posyandu</h1>
+							<p class="p-large">Gunakan Website ini untuk lebih memudahkan orangtua memantau kembang anak terutama pada balita</p>
+						</div> <!-- end of text-container -->
+					</div> <!-- end of col -->
+					<div class="col-lg-6 col-xl-7">
+						<div class="image-container">
+							<div class="img-wrapper">
+								<img class="img-fluid" src="<?php echo base_url() . 'assets/Frontend/images/mamah_.png' ?>" width="500px" alt="alternative">
+							</div> <!-- end of img-wrapper -->
+						</div> <!-- end of image-container -->
+					</div> <!-- end of col -->
+				</div> <!-- end of row -->
+			</div> <!-- end of container -->
+		</div> <!-- end of header-content -->
+	</header> <!-- end of header -->
+	<svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 310">
+		<defs>
+			<style>
+				.cls-1 {
+					fill: #5f4def;
+				}
+			</style>
+		</defs>
+		<title>header-frame</title>
+		<path class="cls-1" d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z" />
+	</svg>
+	<!-- end of header -->
+
+
+
+	<!-- Description -->
+	<div class="cards-1">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="above-heading">DESCRIPTION</div>
+					<h2 class="h2-heading">OUR FEATURES</h2>
+				</div> <!-- end of col -->
+			</div> <!-- end of row -->
+			<div class="row">
+				<div class="col-lg-12">
+
+					<!-- Card -->
+					<div class="card">
+						<div class="card-image">
+							<img class="img-fluid" src="<?php echo base_url() . 'assets/Frontend/images/growth.png' ?>" width="100px" alt="alternative">
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Menu Pertumbuhan</h4>
+							<p></p>
+							<a class="btn-solid-lg page-scroll" href="<?php echo base_url() . 'index.php/Frontend/cek_hasil_gizi/' . $this->session->userdata('ses_id_ortu') . '' ?>">OPEN</a>
+						</div>
+					</div>
+					<!-- end of card -->
+
+					<!-- Card -->
+					<div class="card">
+						<div class="card-image">
+							<img class="img-fluid" src="<?php echo base_url() . 'assets/Frontend/images/skills.png' ?>" width="100px" alt="alternative">
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Menu Perkembangan</h4>
+							<p></p>
+							<a class="btn-solid-lg page-scroll" href="<?php echo base_url() . 'index.php/Frontend/cek_kemampuan_motorik' ?>">OPEN</a>
+						</div>
+					</div>
+					<!-- end of card -->
+
+
+				</div> <!-- end of col -->
+			</div> <!-- end of row -->
+		</div> <!-- end of container -->
+	</div> <!-- end of cards-1 -->
+	<!-- end of description -->
+
+
+	<!-- Pricing -->
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-xl col-lg-7">
+
+				<!-- Area Chart -->
+				<div class="card shadow mb-4">
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">Grafik Pertumbuhan</h6>
+					</div>
+					<div class="card-body">
+						<div class="chart-area">
+							<canvas id="myAreaChart"></canvas>
+						</div>
+						<hr>
+						Styling for the area chart can be found in the <code>/js/demo/chart-area-demo.js</code> file.
+					</div>
+				</div>
+
+
+
+
+			</div>
+		</div>
+
+	</div>
+	</div> <!-- end of container -->
+
+
+
+
+
+
+
+
+
+	<!-- Footer -->
+	<svg class="footer-frame" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1920 79">
+		<defs>
+			<style>
+				.cls-2 {
+					fill: #5f4def;
+				}
+			</style>
+		</defs>
+		<title>footer-frame</title>
+		<path class="cls-2" d="M0,72.427C143,12.138,255.5,4.577,328.644,7.943c147.721,6.8,183.881,60.242,320.83,53.737,143-6.793,167.826-68.128,293-60.9,109.095,6.3,115.68,54.364,225.251,57.319,113.58,3.064,138.8-47.711,251.189-41.8,104.012,5.474,109.713,50.4,197.369,46.572,89.549-3.91,124.375-52.563,227.622-50.155A338.646,338.646,0,0,1,1920,23.467V79.75H0V72.427Z" transform="translate(0 -0.188)" />
+	</svg>
+	<div class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="footer-col first">
+						<h4>Tentang PosyanduKita :</h4>
+						<p class="p-small">Website ini digunakan untuk membantu pemerintah dalam hal kesehatan balita dan anak serta membantu orang tua untuk memantau tumbuh kembang anaknya tanpa harus datang ke posyandu</p>
+					</div>
+				</div> <!-- end of col -->
+				<div class="col-md-4">
+					<div class="footer-col middle">
+						<h4>Kerjasama :</h4>
+						<ul class="list-unstyled li-space-lg p-small">
+							<li class="media">
+								<i class="fas fa-square"></i>
+								<div class="media-body">Kami bekerja sama dengan pemerintah dan juga posyandu kita</div>
+							</li>
+						</ul>
+					</div>
+				</div> <!-- end of col -->
+				<div class="col-md-4">
+					<div class="footer-col last">
+						<h4>Hubungi kami :</h4>
+						<ul class="list-unstyled li-space-lg p-small">
+							<li class="media">
+								<i class="fas fa-map-marker-alt"></i>
+								<div class="media-body">Jl.Setia budi, Rumbai, Pekanbaru </div>
+							</li>
+							<li class="media">
+								<i class="fas fa-envelope"></i>
+								<div class="media-body"><a class="white" href="mailto:posyandukita@pcr.ac.id">posyandukita@pcr.ac.id</a> <i class="fas fa-globe"></i><a class="white" href="#your-link">www.psykt.com</a></div>
+							</li>
+						</ul>
+					</div>
+				</div> <!-- end of col -->
+			</div> <!-- end of row -->
+		</div> <!-- end of container -->
+	</div> <!-- end of footer -->
+	<!-- end of footer -->
+
+
+	<!-- Copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="p-small">Copyright © 2023 <a href="https://inovatik.com">Template by Kelompok3</a><br>
+						Distributed By <a href="https://themewagon.com" target="_blank">Politeknik Caltex Riau</a>
+					</p>
+				</div> <!-- end of col -->
+			</div> <!-- enf of row -->
+		</div> <!-- end of container -->
+	</div> <!-- end of copyright -->
+	<!-- end of copyright -->
+
+
+	<!-- Scripts -->
+	<script src="<?php echo base_url() . 'assets/Frontend/js/jquery.min.js' ?>"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+	<script src="<?php echo base_url() . 'assets/Frontend/js/popper.min.js' ?>"></script> <!-- Popper tooltip library for Bootstrap -->
+	<script src="<?php echo base_url() . 'assets/Frontend/js/bootstrap.min.js' ?>"></script> <!-- Bootstrap framework -->
+	<script src="<?php echo base_url() . 'assets/Frontend/js/jquery.easing.min.js' ?>"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+	<script src="<?php echo base_url() . 'assets/Frontend/js/swiper.min.js' ?>"></script> <!-- Swiper for image and text sliders -->
+	<script src="<?php echo base_url() . 'assets/Frontend/js/jquery.magnific-popup.js' ?>"></script> <!-- Magnific Popup for lightboxes -->
+	<script src="<?php echo base_url() . 'assets/Frontend/js/validator.min.js' ?>"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+	<script src="<?php echo base_url() . 'assets/Frontend/js/scripts.js' ?>"></script> <!-- Custom scripts -->
+
+	<!-- Page level plugins -->
+	<script src="<?php echo base_url(); ?>assets/backend/backend/vendor/chart.js/Chart.min.js"></script>
+
+	<!-- Page level custom scripts -->
+	<script src="<?php echo base_url(); ?>assets/backend/backend/js/demo/chart-area-demo.js"></script>
+	<script>
+		<?php
+
+		$labele = "";
+		$datane = "";
+		foreach ($labelnya as $key => $value) {
+
+			$labele .= '"' . $value['usia'] . '",';
+			$datane .= "" . $value['berat_badan'] . ",";
 		}
-		else
-		{
-			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
-		}
-	break;
+		$labele = rtrim($labele, ",");
+		$datane = rtrim($datane, ",");
+		echo "var labele = [$labele];\n ";
+		echo "var datane = [$datane];";
+		?>
 
-	default:
-		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-		echo 'The application environment is not set correctly.';
-		exit(1); // EXIT_ERROR
-}
+		var myLineChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: labele,
+				datasets: [{
+					label: "Berat Badan",
+					lineTension: 0.3,
+					backgroundColor: "rgba(78, 115, 223, 0.05)",
+					borderColor: "rgba(78, 115, 223, 1)",
+					pointRadius: 3,
+					pointBackgroundColor: "rgba(78, 115, 223, 1)",
+					pointBorderColor: "rgba(78, 115, 223, 1)",
+					pointHoverRadius: 3,
+					pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+					pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+					pointHitRadius: 10,
+					pointBorderWidth: 2,
+					data: datane,
+				}],
+			},
+			options: {
+				maintainAspectRatio: false,
+				layout: {
+					padding: {
+						left: 10,
+						right: 25,
+						top: 25,
+						bottom: 0
+					}
+				},
+				scales: {
+					xAxes: [{
+						time: {
+							unit: 'date'
+						},
+						gridLines: {
+							display: false,
+							drawBorder: false
+						},
+						ticks: {
+							maxTicksLimit: 7
+						}
+					}],
+					yAxes: [{
+						ticks: {
+							maxTicksLimit: 5,
+							padding: 10,
+							// Include a dollar sign in the ticks
+							callback: function(value, index, values) {
+								return '' + number_format(value);
+							}
+						},
+						gridLines: {
+							color: "rgb(234, 236, 244)",
+							zeroLineColor: "rgb(234, 236, 244)",
+							drawBorder: false,
+							borderDash: [2],
+							zeroLineBorderDash: [2]
+						}
+					}],
+				},
+				legend: {
+					display: false
+				},
+				tooltips: {
+					backgroundColor: "rgb(255,255,255)",
+					bodyFontColor: "#858796",
+					titleMarginBottom: 10,
+					titleFontColor: '#6e707e',
+					titleFontSize: 14,
+					borderColor: '#dddfeb',
+					borderWidth: 1,
+					xPadding: 15,
+					yPadding: 15,
+					displayColors: false,
+					intersect: false,
+					mode: 'index',
+					caretPadding: 10,
+					callbacks: {
+						label: function(tooltipItem, chart) {
+							var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+							return datasetLabel + ': ' + number_format(tooltipItem.yLabel);
+						}
+					}
+				}
+			}
+		});
+	</script>
+</body>
 
-/*
- *---------------------------------------------------------------
- * SYSTEM DIRECTORY NAME
- *---------------------------------------------------------------
- *
- * This variable must contain the name of your "system" directory.
- * Set the path if it is not in the same directory as this file.
- */
-	$system_path = 'system';
-
-/*
- *---------------------------------------------------------------
- * APPLICATION DIRECTORY NAME
- *---------------------------------------------------------------
- *
- * If you want this front controller to use a different "application"
- * directory than the default one you can set its name here. The directory
- * can also be renamed or relocated anywhere on your server. If you do,
- * use an absolute (full) server path.
- * For more info please see the user guide:
- *
- * https://codeigniter.com/userguide3/general/managing_apps.html
- *
- * NO TRAILING SLASH!
- */
-	$application_folder = 'application';
-
-/*
- *---------------------------------------------------------------
- * VIEW DIRECTORY NAME
- *---------------------------------------------------------------
- *
- * If you want to move the view directory out of the application
- * directory, set the path to it here. The directory can be renamed
- * and relocated anywhere on your server. If blank, it will default
- * to the standard location inside your application directory.
- * If you do move this, use an absolute (full) server path.
- *
- * NO TRAILING SLASH!
- */
-	$view_folder = '';
-
-
-/*
- * --------------------------------------------------------------------
- * DEFAULT CONTROLLER
- * --------------------------------------------------------------------
- *
- * Normally you will set your default controller in the routes.php file.
- * You can, however, force a custom routing by hard-coding a
- * specific controller class/function here. For most applications, you
- * WILL NOT set your routing here, but it's an option for those
- * special instances where you might want to override the standard
- * routing in a specific front controller that shares a common CI installation.
- *
- * IMPORTANT: If you set the routing here, NO OTHER controller will be
- * callable. In essence, this preference limits your application to ONE
- * specific controller. Leave the function name blank if you need
- * to call functions dynamically via the URI.
- *
- * Un-comment the $routing array below to use this feature
- */
-	// The directory name, relative to the "controllers" directory.  Leave blank
-	// if your controller is not in a sub-directory within the "controllers" one
-	// $routing['directory'] = '';
-
-	// The controller class file name.  Example:  mycontroller
-	// $routing['controller'] = '';
-
-	// The controller function you wish to be called.
-	// $routing['function']	= '';
-
-
-/*
- * -------------------------------------------------------------------
- *  CUSTOM CONFIG VALUES
- * -------------------------------------------------------------------
- *
- * The $assign_to_config array below will be passed dynamically to the
- * config class when initialized. This allows you to set custom config
- * items or override any default config values found in the config.php file.
- * This can be handy as it permits you to share one application between
- * multiple front controller files, with each file containing different
- * config values.
- *
- * Un-comment the $assign_to_config array below to use this feature
- */
-	// $assign_to_config['name_of_config_item'] = 'value of config item';
-
-
-
-// --------------------------------------------------------------------
-// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
-// --------------------------------------------------------------------
-
-/*
- * ---------------------------------------------------------------
- *  Resolve the system path for increased reliability
- * ---------------------------------------------------------------
- */
-
-	// Set the current directory correctly for CLI requests
-	if (defined('STDIN'))
-	{
-		chdir(dirname(__FILE__));
-	}
-
-	if (($_temp = realpath($system_path)) !== FALSE)
-	{
-		$system_path = $_temp.DIRECTORY_SEPARATOR;
-	}
-	else
-	{
-		// Ensure there's a trailing slash
-		$system_path = strtr(
-			rtrim($system_path, '/\\'),
-			'/\\',
-			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
-		).DIRECTORY_SEPARATOR;
-	}
-
-	// Is the system path correct?
-	if ( ! is_dir($system_path))
-	{
-		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-		echo 'Your system folder path does not appear to be set correctly. Please open the following file and correct this: '.pathinfo(__FILE__, PATHINFO_BASENAME);
-		exit(3); // EXIT_CONFIG
-	}
-
-/*
- * -------------------------------------------------------------------
- *  Now that we know the path, set the main path constants
- * -------------------------------------------------------------------
- */
-	// The name of THIS file
-	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
-
-	// Path to the system directory
-	define('BASEPATH', $system_path);
-
-	// Path to the front controller (this file) directory
-	define('FCPATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
-
-	// Name of the "system" directory
-	define('SYSDIR', basename(BASEPATH));
-
-	// The path to the "application" directory
-	if (is_dir($application_folder))
-	{
-		if (($_temp = realpath($application_folder)) !== FALSE)
-		{
-			$application_folder = $_temp;
-		}
-		else
-		{
-			$application_folder = strtr(
-				rtrim($application_folder, '/\\'),
-				'/\\',
-				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
-			);
-		}
-	}
-	elseif (is_dir(BASEPATH.$application_folder.DIRECTORY_SEPARATOR))
-	{
-		$application_folder = BASEPATH.strtr(
-			trim($application_folder, '/\\'),
-			'/\\',
-			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
-		);
-	}
-	else
-	{
-		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-		echo 'Your application folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
-		exit(3); // EXIT_CONFIG
-	}
-
-	define('APPPATH', $application_folder.DIRECTORY_SEPARATOR);
-
-	// The path to the "views" directory
-	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))
-	{
-		$view_folder = APPPATH.'views';
-	}
-	elseif (is_dir($view_folder))
-	{
-		if (($_temp = realpath($view_folder)) !== FALSE)
-		{
-			$view_folder = $_temp;
-		}
-		else
-		{
-			$view_folder = strtr(
-				rtrim($view_folder, '/\\'),
-				'/\\',
-				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
-			);
-		}
-	}
-	elseif (is_dir(APPPATH.$view_folder.DIRECTORY_SEPARATOR))
-	{
-		$view_folder = APPPATH.strtr(
-			trim($view_folder, '/\\'),
-			'/\\',
-			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
-		);
-	}
-	else
-	{
-		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
-		echo 'Your view folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
-		exit(3); // EXIT_CONFIG
-	}
-
-	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
-
-/*
- * --------------------------------------------------------------------
- * LOAD THE BOOTSTRAP FILE
- * --------------------------------------------------------------------
- *
- * And away we go...
- */
-require_once BASEPATH.'core/CodeIgniter.php';
+</html>
