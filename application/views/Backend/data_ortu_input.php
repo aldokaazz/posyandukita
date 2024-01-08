@@ -8,7 +8,6 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link href="<?php echo base_url().'assets/Backend/css/styles.css' ?>" rel="stylesheet" />
     <link rel="stylesheet" href="<?php echo base_url().'assets/Backend/css/tailwind.output.css'?>" />
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
@@ -27,7 +26,7 @@
     >
       <!-- Desktop sidebar -->
       <aside
-        class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0"
+        class="z-20 flex-shrink-0 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block"
       >
         <div class="py-4 text-gray-500 dark:text-gray-400">
           <a
@@ -175,6 +174,17 @@
                       Hasil Status Gizi
                     </a>
                   </li>
+                  <!--<li
+                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                  >
+                    <a <?php foreach ($tbl_balita as $balita) { ?>
+                    class="w-full" href="<?php echo base_url().'index.php/Backend/data_pertumbuhan_balita_view/'.$balita->id_balita.'' ?>"
+                    <?php } ?>
+                    >
+                      PERTUMBUHAN
+                    </a>
+                  
+                  </li>-->
                 </ul>
               </template>
             </li>
@@ -483,14 +493,14 @@
           </ul>
         </div>
       </aside>
-      <div class="flex flex-col flex-1">
+      <div class="flex flex-col flex-1 w-full">
         <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
           <div
             class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300"
           >
             <!-- Mobile hamburger -->
             <button
-              class="p-1 -ml-1 mr-5 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
+              class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
               @click="toggleSideMenu"
               aria-label="Menu"
             >
@@ -507,7 +517,7 @@
                 ></path>
               </svg>
             </button>
-            
+            <!-- Search input -->
             <div class="flex justify-center flex-1 lg:mr-32">
               <div
                 class="relative w-full max-w-xl mr-6 focus-within:text-purple-500"
@@ -722,7 +732,7 @@
           </div>
         </header>
         <main class="h-full pb-16 overflow-y-auto">
-          <div class="container px-6 mx-auto grid">
+          <div class="container grid px-6 mx-auto">
             <h2
               class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
             >
@@ -730,104 +740,122 @@
             </h2>
             <!-- CTA -->
             <div
-              class="px-4 py-3 mb-8 bg-purple-600 rounded-lg shadow-md dark:bg-purple-600"
+              class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
             >
-              <p class="text-sm font-semibold text-white dark:text-white">
-                Input Data Orang Tua
+              <p class="text-sm font-semibold text-black-600 dark:text-black-400">
+                Data Orang Tua
               </p>
             </div>
 
-            <!-- General elements -->
+            <!-- With actions -->
             <h4
               class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300"
             >
-              Input Data Orang Tua
+              Tabel Data Orang Tua
             </h4>
-            <div
-              class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
-            >
-              <form method="POST" action="" enctype="multipart/form-data">
 
-                    <div class="form-row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Nama Ayah *</label>
-                                <input type="text" name="nm_ayah" value="<?php echo set_value('nm_ayah')?>" class="form-control" placeholder="Masukkan Nama Ayah">
-                            </div>
-                            <span class="text-sm text-red-600"><?=form_error('nm_ayah')?></span>
+            <div> 
+              <a href="<?php echo base_url().'index.php/Backend/data_ortu_input' ?>" class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+              > 
+              Tambah Data
+              </a>
+            </div>&nbsp;&nbsp;
+            
+            <div class="w-full overflow-hidden rounded-lg shadow-xs">
+              <div class="w-full overflow-x-auto">
+                <table class="w-full whitespace-no-wrap">
+                  <thead>
+                    <tr
+                      class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                    >
+                      <th class="px-4 py-3">No</th>
+                      <th class="px-4 py-3">Nama Ayah</th>
+                      <th class="px-4 py-3">Nama Ibu</th>
+                      <th class="px-4 py-3">No. Handphone</th>
+                      <th class="px-4 py-3">Username</th>
+                      <th class="px-4 py-3">Password</th>
+                      <th class="px-4 py-3">Email</th>
+                      <th class="px-4 py-3">Alamat</th>
+                      <th class="px-4 py-3">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+                  >
+                    <?php $no = 1; foreach ($tbl_ortu as $ortu) { ?>
+                    <tr class="text-gray-700 dark:text-gray-400">
+                      <td class="px-4 py-3">
+                        <div class="flex items-center text-sm">
+                          <!-- Avatar with inset shadow -->
+                          <div>
+                            <p class="font-semigrey"><?php echo $no++ ?></p>
+                          </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Nama Ibu *</label>
-                                <input type="text" name="nm_ibu" value="<?php echo set_value('nm_ibu')?>" class="form-control" placeholder="Masukkan Nama Ibu">
-                            </div>
-                            <span class="text-sm text-red-600"><?=form_error('nm_ibu')?></span>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        <?php echo $ortu->nm_ayah ?>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        <?php echo $ortu->nm_ibu ?>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        <?php echo $ortu->no_hp ?>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        <?php echo $ortu->username ?>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        <?php echo $ortu->password ?>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        <?php echo $ortu->email ?>
+                      </td>
+                      <td class="px-4 py-3 text-sm">
+                        <?php echo $ortu->alamat ?>
+                      </td>
+                      <td class="px-4 py-3">
+                        <div class="flex items-center space-x-4 text-sm">
+                          <a
+                            href="<?php echo base_url().'index.php/Backend/data_ortu_edit/'.$ortu->id_ortu.'' ?>" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                            aria-label="Edit"
+                          >
+                            <svg
+                              class="w-5 h-5"
+                              aria-hidden="true"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
+                              ></path>
+                            </svg>
+                          </a>
+                          <a
+                            href="<?php echo base_url().'index.php/Backend/data_ortu_delete/'.$ortu->id_ortu.'' ?>" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" onclick="return confirm('Apakah Anda Ingin Menghapus Data Ini ?')"
+                            aria-label="Delete"
+                          >
+                            <svg
+                              class="w-5 h-5"
+                              aria-hidden="true"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fill-rule="evenodd"
+                                d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                clip-rule="evenodd"
+                              ></path>
+                            </svg>
+                          </a>
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Username *</label>
-                                <input type="text" name="username" value="<?php echo set_value('username')?>" class="form-control" placeholder="Masukkan Username">
-                            </div>
-                            <span class="text-sm text-red-600"><?=form_error('username')?></span>
-                        </div>
-                    </div>
+                      </td>
+                    </tr>
+                    <?php } ?>
 
-                    <div class="form-row">
-                        
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Password * (minimal5 karakter)</label>
-                                <input type="password" name="password" value="<?php echo set_value('password')?>" class="form-control" placeholder="Masukkan Password">
-                            </div>
-                            <span class="text-sm text-red-600"><?=form_error('password')?></span>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Konfirmasi Password *</label>
-                                <input type="password" name="passconf" value="<?php echo set_value('passconf')?>" class="form-control" placeholder="Masukkan Password">
-                            </div>
-                            <span class="text-sm text-red-600"><?=form_error('passconf')?></span>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Email *</label>
-                                <input type="text" name="email" value="<?php echo set_value('email')?>" class="form-control" placeholder="Masukkan Email">
-                            </div>
-                            <span class="text-sm text-red-600"><?=form_error('email')?></span>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>No.Handphone</label>
-                                <input type="text" name="no_hp" value="<?php echo set_value('no_hp')?>" class="form-control" placeholder="Masukkan No.Handphone">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Alamat</label>
-                                <textarea name="alamat" class="form-control" placeholder="Masukkan Alamat"><?php echo set_value('alamat')?></textarea>  
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <center>
-                        <div class="form-group mt-4 mb-0">
-                            <input type="submit" name="proses" class="btn btn-primary" value="Simpan Data Orang Tua">
-                            <button type="reset" class="btn btn-dark">Reset</button>
-                        </div>
-                    </center>
-
-                </form>
-
+                    
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </main>
