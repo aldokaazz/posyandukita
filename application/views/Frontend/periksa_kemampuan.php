@@ -18,7 +18,7 @@
   <meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>Periksa Kemampuan - Posyandu Kita</title>
+    <title>Motorik - Posyandu Kita</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -135,92 +135,73 @@
               class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
             >
 
-              <form method="POST" action="" enctype="multipart/form-data">
-
-                    <div class="form-row">
-                        <div class="col-md-12">
+              <form method="post" action="">
+    <div class="col-md-12">
                             <div class="form-group">
                                 <label>Usia</label>
                                 <select name="usia" class="form-control">
                                     <option>~Pilih Usia</option>
-                                    <?php foreach ($tbl_kemampuan_motorik as $kemampuan_motorik) { ?>
-                                    <option value="<?php echo $kemampuan_motorik->id_kemampuan_motorik ?>"><?php echo $kemampuan_motorik->usia ?></option>    
-
-                                    <?php } ?>
+                                    <option value='3'>3</option>";
+                                    <option value='6'>6</option>";
+                                    <option value='9'>9</option>";
+                                    <option value='12'>12</option>";
+                                    <option value='18'>18</option>";
+                                    <option value='24'>24</option>";
+                                    <option value='36'>36</option>";
+                                    <option value='48'>48</option>";
+                                    <option value='60'>60</option>";
+                                    <option value='72'>72</option>";
                                 </select>
-                            </div>
-                            <center>
                                 <div class="form-group mt-4 mb-0">
-                                <input type="submit" name="proses" class="btn btn-primary" value="Open Kemampuan Motorik">
-                                 </div>
-                            </center>
-                        </div>
-                        
-                        <label>
-                            <?php foreach ($tbl_kemampuan_motorik as $kemampuan_motorik) { ?>
-                            <input type='checkbox' name="kemampuan_motorik" value="<?php echo $kemampuan_motorik->id_kemampuan_motorik ?>">
-                            <?php echo $kemampuan_motorik->kemampuan_motorik ?>
-
-                            <?php } ?>
-                        </label>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Kemampuan Motorik</label>
-                                <select name="kemampuan_motorik" class="form-control">
-                                    <option>~Pilih Kemampuan Motorik</option>
-                                    <?php foreach ($tbl_kemampuan_motorik as $kemampuan_motorik) { ?>
-                                    <option value="<?php echo $kemampuan_motorik->id_kemampuan_motorik ?>"><?php echo $kemampuan_motorik->kemampuan_motorik ?></option>    
-
-                                    <?php } ?>
-                                </select>
+                                <input type="submit" name="kirim_usia" class="btn btn-primary" value="Kirim Usia">
+                                </div>
                             </div>
                         </div>
+</form>
+<hr>
+<?php
+if(isset($_POST['kirim_usia'])){
+    $usia = $_POST['usia'];
 
-
-              <div class="w-full overflow-x-auto">
-                <table class="w-full whitespace-no-wrap">
-                  <thead>
-                    <tr
-                      class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
-                    >
-                      
-                      <th class="px-4 py-3">Kemampuan Motorik</th>
-                      <th class="px-4 py-3">Pilih</th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
-                  >
-                    <?php foreach ($tbl_kemampuan_motorik as $kemampuan_motorik) { ?>
-                    <tr class="text-gray-700 dark:text-gray-400">
-                      <td class="px-4 py-3 text-sm">
-                        <?php echo $kemampuan_motorik->kemampuan_motorik ?>
-                      </td>
-                      <td class="px-4 py-3">
-
-                        <input type="checkbox" name="id_kemampuan_motorik[]" value="<?php echo $kemampuan_motorik->id_kemampuan_motorik ?>">
-                      </td>
-                    </tr>
-                  <?php } ?>
-
-                    
-                  </tbody>
-                </table>
-              </div>
-            
-              
-            </div>
-        </div>
-
-
-                    <center>
-                        <div class="form-group mt-4 mb-0">
-                            <input type="submit" name="proses" class="btn btn-primary" value="Update Data Kemampuan Motorik">
-                            <button type="reset" class="btn btn-dark">Reset</button>
-                        </div>
-                    </center>
-
-                </form>
+    
+    ?>
+<form method="post" action="<?php echo base_url().'index.php/Frontend/hasil_kemampuan_motorik'?>">
+    <b>Usia : <?= $usia ?> Bulan</b> <br>
+    <input type='hidden' name='usia' value="<?= $usia ?>">
+    <?php foreach ($tbl_kemampuan_motorik as $kemampuan_motorik) { 
+    if ($usia = "3") {
+        
+        ?>
+    <label>
+        <input type='checkbox' name='kemampuan_motorik[]' value="<?php echo $kemampuan_motorik->id_kemampuan_motorik ?>"><?php echo $kemampuan_motorik->kemampuan_motorik ?>
+    </label> <br>
+        <?php
+        }
+    else if ($usia <= "6") {
+        ?>
+    <label>
+        <input type='checkbox' name='kemampuan_motorik[]' value="<?php echo $kemampuan_motorik->id_kemampuan_motorik ?>"><?php echo $kemampuan_motorik->kemampuan_motorik ?>
+    </label> <br>
+        <?php
+    }
+    else  {
+        ?>
+    <label>
+        <input type='checkbox' name='kemampuan_motorik[]' value="<?php echo $kemampuan_motorik->id_kemampuan_motorik ?>"><?php echo $kemampuan_motorik->kemampuan_motorik ?>
+    </label> <br>
+        <?php
+        }
+    }  
+    ?>
+    <br>
+    <div class="form-group mt-4 mb-0">
+    <input type="submit" name="kirim_kemampuan" class="btn btn-primary" value="Cek Hasil Perkembangan">
+    </div>
+</form>
+<hr>
+    <?php
+}
+?>
 
             </div>
           </div>&nbsp;&nbsp;
