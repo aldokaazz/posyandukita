@@ -19,7 +19,7 @@
 	<meta property="og:type" content="article" />
 
 	<!-- Website Title -->
-	<title>Posyandu Anggrek Bulan</title>
+	<title>Posyandu Kita</title>
 
 	<!-- Styles -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -72,7 +72,7 @@
 						<a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/cek_hasil_gizi/' . $this->session->userdata('ses_id_ortu') . '' ?>">PERTUMBUHAN</a>
+						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/cek_hasil_gizi/' . $this->session->userdata('ses_id_ortu') . '' ?>">ABOUT</a>
 					</li>
 					<!--<li class="nav-item">
                         <a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/perkembangan' ?>">PERKEMBANGAN(1)</a>
@@ -84,8 +84,7 @@
 						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/cek_kemampuan_motorik' ?>">PERKEMBANGAN</a>
 					</li>
 					<!--<li class="nav-item">
-                        <a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/hasil_motorik' ?>">Hasil Motorik</a>
-                    </li>-->
+                        <a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/hasil_motorik' ?>">Hasil Motorik</a
 
 					<!-- Dropdown Menu -->
 					<li class="nav-item dropdown">
@@ -167,7 +166,7 @@
 							<img class="img-fluid" src="<?php echo base_url() . 'assets/Frontend/images/growth.png' ?>" width="100px" alt="alternative">
 						</div>
 						<div class="card-body">
-							<h4 class="card-title">Menu Pertumbuhan</h4>
+							<h4 class="card-title">Menu About</h4>
 							<p></p>
 							<a class="btn-solid-lg page-scroll" href="<?php echo base_url() . 'index.php/Frontend/cek_hasil_gizi/' . $this->session->userdata('ses_id_ortu') . '' ?>">OPEN</a>
 						</div>
@@ -186,6 +185,7 @@
 						</div>
 					</div>
 					<!-- end of card -->
+					
 
 
 				</div> <!-- end of col -->
