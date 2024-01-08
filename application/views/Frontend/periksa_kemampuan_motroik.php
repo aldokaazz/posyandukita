@@ -18,7 +18,7 @@
   <meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>Privacy Policy - Tivo - SaaS App HTML Landing Page Template</title>
+    <title>Periksa Kemampuan - Posyandu Kita</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -52,7 +52,7 @@
             <!-- Image Logo -->
             <img src="<?php echo base_url().'assets/Frontend/images/logoposyandu.png'?>" width="100px" alt=""> 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <a class="navbar-brand logo-text page-scroll" href="index.html">Posyandu Anggrek Bulan</a> 
+            <a class="navbar-brand logo-text page-scroll" href="index.html">Posyandu Kita</a> 
             
             <!-- Mobile Menu Toggle Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +67,7 @@
                         <a class="nav-link page-scroll" href="<?php echo base_url().'index.php/Frontend'?>">HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="<?php echo base_url().'index.php/Frontend/hasil_status_gizi'?>">PERTUMBUHAN</a>
+                        <a class="nav-link page-scroll" href="<?php echo base_url().'index.php/Frontend/hasil_status_gizi'?>">ABOUT</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="index.html#details">PERKEMBANGAN</a>
@@ -232,64 +232,64 @@
 
     
     
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="footer-col first">
-                        <h4>About Tivo</h4>
-                        <p class="p-small">We're passionate about offering some of the best business growth services for start more words</p>
-                    </div>
-                </div> <!-- end of col -->
-                <div class="col-md-4">
-                    <div class="footer-col middle">
-                        <h4>Important Links</h4>
-                        <ul class="list-unstyled li-space-lg p-small">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Our business partners <a class="white" href="#your-link">startupguide.com</a></div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Read our <a class="white" href="terms-conditions.html">Terms & Conditions</a>, <a class="white" href="privacy-policy.html">Privacy Policy</a></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div> <!-- end of col -->
-                <div class="col-md-4">
-                    <div class="footer-col last">
-                        <h4>Contact</h4>
-                        <ul class="list-unstyled li-space-lg p-small">
-                            <li class="media">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div class="media-body">22 Innovative, San Francisco, CA 94043, US</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-envelope"></i>
-                                <div class="media-body"><a class="white" href="mailto:contact@Tivo.com">contact@Tivo.com</a> <i class="fas fa-globe"></i><a class="white" href="#your-link">www.Tivo.com</a></div>
-                            </li>
-                        </ul>
-                    </div> 
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of footer -->  
-    <!-- end of footer -->
+		  <div class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="footer-col first">
+						<h4>Tentang PosyanduKita</h4>
+						<p class="p-small">Website ini digunakan untuk membantu pemerintah dalam hal kesehatan balita dan anak serta membantu orang tua untuk memantau tumbuh kembang anaknya tanpa harus datang ke posyandu</p>
+					</div>
+				</div> <!-- end of col -->
+				<div class="col-md-4">
+					<div class="footer-col middle">
+						<h4>Kerjasama</h4>
+						<ul class="list-unstyled li-space-lg p-small">
+							<li class="media">
+								<i class="fas fa-square"></i>
+								<div class="media-body">Kami bekerja sama dengan pemerintah dan juga posyandu kita</div>
+							</li>
+							<li class="media">
+								<i class="fas fa-square"></i>
+								<div class="media-body">Read our <a class="white" href="terms-conditions.html">Terms & Conditions</a>, <a class="white" href="privacy-policy.html">Privacy Policy</a></div>
+							</li>
+						</ul>
+					</div>
+				</div> <!-- end of col -->
+				<div class="col-md-4">
+					<div class="footer-col last">
+						<h4>Hubungi Kami</h4>
+						<ul class="list-unstyled li-space-lg p-small">
+							<li class="media">
+								<i class="fas fa-map-marker-alt"></i>
+								<div class="media-body">Jl.Setia budi, Rumbai, Pekanbaru </div>
+							</li>
+							<li class="media">
+								<i class="fas fa-envelope"></i>
+								<div class="media-body"><a class="white" href="mailto:posyandukita@pcr.ac.id">posyandukita@pcr.ac.id</a> <i class="fas fa-globe"></i><a class="white" href="#your-link">www.psykt.com</a></div>
+							</li>
+						</ul>
+					</div>
+				</div> <!-- end of col -->
+			</div> <!-- end of row -->
+		</div> <!-- end of container -->
+	</div> <!-- end of footer -->
+	<!-- end of footer -->
 
 
-    <!-- Copyright -->
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="p-small">Copyright © 2020 <a href="https://inovatik.com">Template by Inovatik</a><br>
-                        Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                    </p>
-                </div> <!-- end of col -->
-            </div> <!-- enf of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of copyright --> 
-    <!-- end of copyright -->
+	<!-- Copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="p-small">Copyright © 2023 by kelompok3<br>
+						Distributed By Politeknik Caltex Riau</a>
+					</p>
+				</div> <!-- end of col -->
+			</div> <!-- enf of row -->
+		</div> <!-- end of container -->
+	</div> <!-- end of copyright -->
+	<!-- end of copyright -->
     
       
     <!-- Scripts -->
