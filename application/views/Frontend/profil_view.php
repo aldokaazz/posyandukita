@@ -69,7 +69,7 @@
 						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend' ?>">HOME <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/cek_hasil_gizi/' . $this->session->userdata('ses_id_ortu') . '' ?>">PERTUMBUHAN</a>
+						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/cek_hasil_gizi/' . $this->session->userdata('ses_id_ortu') . '' ?>">ABOUT</a>
 					</li>
 					<!--<li class="nav-item">
                         <a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/periksa_kemampuan_motorik' ?>">PERKEMBANGAN</a>
