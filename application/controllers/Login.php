@@ -24,11 +24,12 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('passconf', 'Konfirmasi Password', 'required|matches[password]',
 			array('matches' => '%s Tidak Sesuai dengan Password')
 	);
-		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required|req_mail');
 
 		$this->form_validation->set_message('required', '%s wajib diisi');
 		$this->form_validation->set_message('min_length', '{field} minimal 5 karakter');
 		$this->form_validation->set_message('is_unique', '{field} telah digunakan silahkan ganti');
+		$this->form_validation->set_message('req_min', '{field} harus menggunakan @');
 
 		$this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
 
@@ -131,4 +132,3 @@ class Login extends CI_Controller {
 		redirect($url);
 	}
 }
-
