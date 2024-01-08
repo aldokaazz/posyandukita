@@ -54,7 +54,7 @@
 			<!-- Image Logo -->
 			<img src="<?php echo base_url() . 'assets/Frontend/images/logoposyandu.png' ?>" width="100px" alt="">
 			<!-- Text Logo - Use this if you don't have a graphic logo -->
-			<a class="navbar-brand logo-text page-scroll" href="index.html">PosyanduKita</a>
+			<a class="navbar-brand logo-text page-scroll" href="index.html">Posyandu Kita</a>
 
 			<!-- Mobile Menu Toggle Button -->
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,7 +69,7 @@
 						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend' ?>">HOME <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/cek_hasil_gizi/' . $this->session->userdata('ses_id_ortu') . '' ?>">PERTUMBUHAN</a>
+						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/cek_hasil_gizi/' . $this->session->userdata('ses_id_ortu') . '' ?>">ABOUT</a>
 					</li>
 					<!--<li class="nav-item">
                         <a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/periksa_kemampuan_motorik' ?>">PERKEMBANGAN</a>
