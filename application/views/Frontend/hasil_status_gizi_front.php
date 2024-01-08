@@ -19,7 +19,7 @@
 	<meta property="og:type" content="article" />
 
 	<!-- Website Title -->
-	<title>Privacy Policy - Tivo - SaaS App HTML Landing Page Template</title>
+	<title>Status Gizi - Posyandu Kita</title>
 
 	<!-- Styles -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
@@ -69,7 +69,7 @@
 						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend' ?>">HOME <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/hasil_status_gizi' ?>">PERTUMBUHAN</a>
+						<a class="nav-link page-scroll" href="<?php echo base_url() . 'index.php/Frontend/hasil_status_gizi' ?>">ABOUT</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link page-scroll" href="index.html#details">PERKEMBANGAN</a>
