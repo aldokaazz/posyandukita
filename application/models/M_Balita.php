@@ -1,25 +1,8 @@
 <?php
-Class M_Balita extends CI_Model{
+Class M_Kemampuan_motorik extends CI_Model{
 
 	function tampil_data(){
-		return $this->db->get('tbl_balita');
-	}
-
-	function tampil_data2(){
-		$this->db->select('*');
-		$this->db->from('tbl_balita');
-		$this->db->JOIN('tbl_ortu','tbl_ortu.id_ortu=tbl_balita.id_ortu');
-		$query = $this->db->get();
-		return $query->result();
-	}
-
-	function tampil_data_perkembangan($where){
-		$this->db->select('*');
-		$this->db->from('tbl_balita');
-		$this->db->JOIN('tbl_ortu','tbl_ortu.id_ortu=tbl_balita.id_ortu');
-		$this->db->where('tbl_ortu.id_ortu = '.$where);
-		$query = $this->db->get();
-		return $query->result();
+		return $this->db->get('tbl_kemampuan_motorik');
 	}
 
 	function input_data($data,$table){
@@ -40,41 +23,17 @@ Class M_Balita extends CI_Model{
 		$this->db->delete($table);
 	}
 
-	function jumlah_balita(){
+	function jumlah_kemampuan(){
 		$this->db->select('*');
-		$this->db->from('tbl_balita');
+		$this->db->from('tbl_kemampuan_motorik');
 		return $this->db->get()->num_rows();
 	}
 
-	function input_data_pertumbuhan_balita($data,$table){
+	function input_perkembangan_balita($data,$table){
 		$this->db->insert($table,$data);
 	}
 
-	function join_data($where){
-		$this->db->select('*');
-		$this->db->from('tbl_pertumbuhan');
-		$this->db->JOIN('tbl_balita','tbl_balita.id_balita=tbl_pertumbuhan.balita');
-		$this->db->where('tbl_pertumbuhan.balita='.$where);
-		$query = $this->db->get();
-		return $query->result();
-	}
-
-	function join_data2($where){
-		$this->db->select('*');
-		$this->db->from('tbl_pertumbuhan_balita');
-		$this->db->JOIN('tbl_balita','tbl_balita.id_balita=tbl_pertumbuhan_balita.balita');
-		$this->db->where('tbl_pertumbuhan_balita.balita='.$where);
-		$query = $this->db->get();
-		return $query->result();
-	}
-
-	function join_data_pertumbuhan_front($where){
-		$this->db->select('*');
-		$this->db->from('tbl_pertumbuhan');
-		$this->db->JOIN('tbl_balita','tbl_balita.id_balita=tbl_pertumbuhan.balita');
-		$this->db->JOIN('tbl_ortu','tbl_ortu.id_ortu=tbl_balita.id_ortu');
-		$this->db->where('tbl_pertumbuhan.balita='.$where);
-		$query = $this->db->get();
-		return $query->result();
+	function input_usia($data,$table){
+		$this->db->insert($table,$data);
 	}
 }
